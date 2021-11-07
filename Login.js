@@ -25,13 +25,13 @@ const Login = ({navigation}) => {
     const [hidePassword, setHidePassword] = useState(true)
     const [loading, setLoading] = useState(false)
     const [message, setMessage] = useState("")
-    const [googleLoading, setGoogleLoading] = useState(false)
+    //const [googleLoading, setGoogleLoading] = useState(false)
 
     const handleLogin = (values) => {
         console.log(values)
         setLoading(true)
         //navigation.navigate('Home')
-        const url = "http://192.168.0.158/temp/login.php";
+        //const url = "";
         axios.post(url, values)
             .then((response) => {
                 const result = response.data
@@ -48,30 +48,6 @@ const Login = ({navigation}) => {
         setLoading(false)
         //navigation.navigate('Home')
     }
-
-    // const handleGoogleLogin  = () => {
-    //     setGoogleLoading(true)
-    //     const config = {
-    //         androidClientId: `859731800789-kho6midase6qojklehaqg4anede553hb.apps.googleusercontent.com`,
-    //         iosClientId: `859731800789-t6rn7jsv9mlbb61i5kkn7doctuvsebfg.apps.googleusercontent.com`,
-    //         scopes:['profile', 'email']
-    //     }
-
-    //     Google.logInAsync(config)
-    //         .then((result) => {
-    //             const {type, user} = result
-    //             if(type == 'success'){
-    //                 const {email, name} = user
-    //                 const data = {'user': name, 'email': email}
-    //                 navigation.navigate('Welcome', data)
-    //             }
-    //         })
-    //         .catch((error) => {
-    //             console.log(error)
-    //         })
-
-    //     setGoogleLoading(false)
-    // }    
 
     return (
         <LoginContainer>
@@ -137,28 +113,6 @@ const Login = ({navigation}) => {
                                     </StyledButton>
                                 }
                             <Line />
-
-                            {/* {googleLoading &&(
-                                <StyledButton google={true} disbaled={true}>
-                                    <ActivityIndicator size="large" color="#ffffff" />
-                                </StyledButton>
-                            )}
-                            {!googleLoading && (
-                                <StyledButton google={true} onPress={handleGoogleLogin}>
-                                    <Fontisto name="google" color={secondary} size={25} />
-                                    <ButtonText google={true}>Sign with Google</ButtonText>
-                                </StyledButton>
-                            )}
-
-                            <StyledButton onPress={getApiData}>                                    
-                                    <ButtonText google={true}>Get API data</ButtonText>
-                            </StyledButton> */}
-
-                            {/* <StyledButton onPress={() => {navigation.navigate('SignUp')}}>
-                                <ButtonText>
-                                    Sign Up
-                                </ButtonText>
-                            </StyledButton> */}
                             
                         </StyledFormArea>
                     )}
