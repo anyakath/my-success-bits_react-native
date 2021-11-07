@@ -30,7 +30,7 @@ const SignUp = ({navigation}) => {
     const handleLogin = (values) => {
         setLoading(true)
         
-        const url = "http://192.168.0.158/temp/login.php";
+        //const url = "" ;
         axios.post(url, values)
             .then((response) => {
                 const result = response.data
