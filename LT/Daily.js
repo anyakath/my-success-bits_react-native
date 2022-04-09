@@ -24,7 +24,7 @@ const Daily = () => {
 
     const handleAddHabit = (habit) => {
         //setHabit 
-        const url = "http://192.168.0.158/temp/setHabit.php";
+        const url = "http://---/temp/setHabit.php";
         console.log(habit.title)
         console.log(habit.date)
         axios.post(url, habit)
